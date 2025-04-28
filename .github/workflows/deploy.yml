@@ -16,7 +16,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18.19.1'
+          node-version: '18.19.1'  # 这里可以使用你的 Node.js 版本
 
       - name: Install Hexo CLI
         run: npm install -g hexo-cli
@@ -34,12 +34,15 @@ jobs:
         run: hexo clean
 
       - name: Generate Hexo
-        run: hexo generate
+        run: | 
+          hexo generate
+          hexo generate
 
-      - name: Configure Git
+      - name: Configure Git  # 解决 "Author identity unknown" 问题
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "github-actions@github.com"
+
 
       - name: Setup SSH
         env:
@@ -49,11 +52,6 @@ jobs:
           echo "$DEPLOY_KEY" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan github.com >> ~/.ssh/known_hosts
-
-      - name: Debug SSH setup
-        run: |
-          cat ~/.ssh/id_rsa
-          ssh -T git@github.com
 
       - name: Force Git to use SSH
         run: git remote set-url origin git@github.com:ZIYAN137/EFFNEU-Trinity.github.io.git
