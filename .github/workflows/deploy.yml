@@ -54,10 +54,7 @@ jobs:
           ssh-keyscan github.com >> ~/.ssh/known_hosts
 
       - name: Force Git to use SSH
-        run: git remote set-url origin git@github.com:ZIYAN137/EFFNEU-Trinity.github.io.git
-
-      - name: Check Git config
-        run: git config --list
+        run: git remote set-url origin git@github.com:EFFNEU-Trinity/EFFNEU-Trinity.github.io.git
 
       - name: Deploy Hexo
         run: hexo deploy
