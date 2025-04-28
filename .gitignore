@@ -1,0 +1,26 @@
+.DS_Store
+Thumbs.db
+db.json
+*.log
+node_modules/
+public/
+.deploy*/
+_multiconfig.yml
+.vscode/
+.idea/
+.cache/
+
+themes/lite/.DS_Store
+themes/lite/node_modules/
+themes/lite/dist/
+themes/lite/npm-debug.log*
+themes/lite/yarn-debug.log*
+themes/lite/yarn-error.log*
+
+# Editor directories and files
+themes/lite/.idea
+themes/lite/.vscode
+themes/lite/*.suo
+themes/lite/*.ntvs*
+themes/lite/*.njsproj
+themes/lite/*.sln

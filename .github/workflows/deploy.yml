@@ -1,0 +1,60 @@
+name: Deploy Hexo Blog
+
+on:
+  push:
+    branches:
+      - master  # 这里的 main 需要根据你的仓库实际主分支修改
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18.19.1'  # 这里可以使用你的 Node.js 版本
+
+      - name: Install Hexo CLI
+        run: npm install -g hexo-cli
+
+      - name: Install Git Deployer
+        run: npm install hexo-deployer-git --save
+
+      - name: Install Hexo Hide Posts
+        run: npm install hexo-hide-posts --save
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Clean Hexo
+        run: hexo clean
+
+      - name: Generate Hexo
+        run: | 
+          hexo generate
+          hexo generate
+
+      - name: Configure Git  # 解决 "Author identity unknown" 问题
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "github-actions@github.com"
+
+
+      - name: Setup SSH
+        env:
+          DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
+        run: |
+          mkdir -p ~/.ssh
+          echo "$DEPLOY_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+
+      - name: Force Git to use SSH
+        run: git remote set-url origin git@github.com:ZIYAN137/EFFNEU-Trinity.github.io.git
+
+      - name: Deploy Hexo
+        run: hexo deploy
