@@ -1,5 +1,11 @@
 ---
 title: cpp智能指针讨论
+date: 2025-04-29 15:18:00
+author: mildred
+tags:
+  - mildred
+  - cpp
+  - 智能指针
 ---
 
 ### 智能指针
