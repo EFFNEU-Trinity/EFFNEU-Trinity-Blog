@@ -1,3 +1,13 @@
+---
+title: Rust中Rc和Arc详解
+date: 2025-04-29 09:39:00
+author: zemu
+tags:
+  - zemu
+  - Rust
+  - Rc
+  - Arc
+---
 - $$Rc<T> $$---用于单线程场景下的共享所有权
 只提供对内部数据$$ T $$的不可变访问，你不能直接通过$$ Rc<T> $$获得$$\&mut~~ T$$
 
