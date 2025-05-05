@@ -6,7 +6,7 @@
 - 洪✌的个人博客：[mildred522.github.io](mildred522.github.io)
 - 宸✌他没有博客。
 
-采用Hexo生成静态博客并且 CI/CD 到 [EFFNEU-Trinity.github.io](EFFNEU-Trinity.github.io)
+采用Hexo生成静态博客并且 CI/CD 到 [EFFNEU-Trinity.github.io](https://effneu-trinity.github.io/#/)
 
 # 首次使用
 
