@@ -27,6 +27,9 @@ jobs:
       - name: Install Hexo Hide Posts
         run: npm install hexo-hide-posts --save
 
+      - name: Install Latex Support
+        run: npm install hexo-filter-mathjax --save
+
       - name: Install Dependencies
         run: npm install
 
