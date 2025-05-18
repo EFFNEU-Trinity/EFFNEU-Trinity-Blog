@@ -3,7 +3,7 @@ title: rcore_camp_2025S_stage1&2
 date: 2025-04-30 17:03:26
 tags:
   - Rcore
-  - author: ZIYAN137
+  - ZIYAN137
 ---
 # 前导
 本博客作为开源操作系统训练营2025S的1、2阶段学习记录，简单总结了在这两个阶段的学习和coding。留作纪念，也希望能够帮助到大家。
